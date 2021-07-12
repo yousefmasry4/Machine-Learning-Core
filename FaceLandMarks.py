@@ -5,9 +5,15 @@ import mediapipe as mp
 
 
 class FaceLandMarks:
-    def __init__(self, img: str, image=None):
+    def __init__(self, img=None, image=None):
         self.img = img
-        self.image = None  # read img and save it in this var
+        if self.img is None and image is None:
+            raise Error("You should provide image")
+        if image is not None:
+            self.image = image  # read img and save it in this var
+        else:
+            #read img from path
+            pass
         self.mp_face_mesh = mp.solutions.face_mesh
         self.mp_face_detection = mp.solutions.face_detection
         self.mp_drawing = mp.solutions.drawing_utils
@@ -39,7 +45,6 @@ class FaceLandMarks:
     def face_points(self, static_image_mode=True, max_num_faces=1, min_detection_confidence=0.7) -> dict:
         with mp_face_detection.FaceDetection(
                 min_detection_confidence=0.7, model_selection=0) as face_detection:
-
             resultsLands = face_detection.process(cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB))
 
             if not resultsLands.detections:
