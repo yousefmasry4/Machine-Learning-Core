@@ -28,8 +28,6 @@ class FaceLandMarks:
         image = FaceLandMarks.load_image(path) if path is not None else img
         D_HEIGHT = 480
         D_WIDTH = 480
-        print(image)
-        print("----------------------------------")
         height, width = image.shape[:2]
         if height < width:
             image = cv2.resize(image, (D_WIDTH, math.floor(height / (width / D_WIDTH))))
