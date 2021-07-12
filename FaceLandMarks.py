@@ -86,7 +86,6 @@ if __name__ == '__main__':
     print(ans)
     FaceLandMarks.show_image(img=ans["output_img"])
     '''
-    ans=fm.face_mesh()
+    ans = fm.face_mesh()
     print(ans)
     FaceLandMarks.show_image(img=ans["output_img"])
-
