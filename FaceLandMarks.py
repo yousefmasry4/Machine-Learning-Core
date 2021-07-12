@@ -81,11 +81,9 @@ if __name__ == '__main__':
     fm = FaceLandMarks(img="test/1.jpg")
     # FaceLandMarks.show_image(img=fm.image)
     # FaceLandMarks.show_image(path="test/1.jpg")
-    '''
-    ans=fm.face_points()
-    print(ans)
-    FaceLandMarks.show_image(img=ans["output_img"])
-    '''
+    # ans=fm.face_points()
+    # print(ans)
+    # FaceLandMarks.show_image(img=ans["output_img"])
     ans = fm.face_mesh()
     print(ans)
     FaceLandMarks.show_image(img=ans["output_img"])
