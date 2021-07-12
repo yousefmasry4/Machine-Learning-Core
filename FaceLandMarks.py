@@ -24,7 +24,6 @@ class FaceLandMarks:
             # Draw face landmarks of each face.
             if not results.multi_face_landmarks:
                 return {}
-            annotated_image = self.image.copy()
             img = mp_drawing.draw_landmarks(
                 image=annotated_image,
                 landmark_list=results.multi_face_landmarks,
@@ -35,6 +34,21 @@ class FaceLandMarks:
                 "origin_img": annotated_image,
                 "output_img": img,
                 "landmarks": results.multi_face_landmarks
+            }
+
+    def face_points(self, static_image_mode=True, max_num_faces=1, min_detection_confidence=0.7) -> dict:
+        with mp_face_detection.FaceDetection(
+                min_detection_confidence=0.7, model_selection=0) as face_detection:
+
+            resultsLands = face_detection.process(cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB))
+
+            if not resultsLands.detections:
+                return {}
+            annotated_image = self.image.copy()
+            return {
+                "origin_img": annotated_image,
+                "output_img": mp_drawing.draw_detection(annotated_image, resultsLands.detections, ),
+                "landmarks": resultsLands.detections
             }
 
 
