@@ -1,6 +1,6 @@
 import cv2
-import math
 import numpy as np
+import math
 import mediapipe as mp
 
 class FaceLandMarks:
