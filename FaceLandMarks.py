@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import math
 import mediapipe as mp
+from AR import AR
 
 
 class FaceLandMarks:
@@ -57,7 +58,11 @@ class FaceLandMarks:
             return {
                 "origin_img": self.image,
                 "output_img": annotated_image,
-                "landmarks": results.multi_face_landmarks
+
+                "landmarks": [
+                    [data_point.z,data_point.y,data_point.z]
+                    for data_point in results.multi_face_landmarks[0].landmark
+                ]
             }
 
     def face_points(self, min_detection_confidence=0.7, model_selection=0) -> dict:
@@ -72,7 +77,10 @@ class FaceLandMarks:
             return {
                 "origin_img": self.image,
                 "output_img": annotated_image,
-                "landmarks": resultsLands.detections
+                "landmarks": [
+                    [data_point.z, data_point.y, data_point.z]
+                    for data_point in results.multi_face_landmarks[0].landmark
+                ]
             }
 
 
@@ -85,5 +93,8 @@ if __name__ == '__main__':
     # print(ans)
     # FaceLandMarks.show_image(img=ans["output_img"])
     ans = fm.face_mesh()
-    print(ans)
-    FaceLandMarks.show_image(img=ans["output_img"])
+
+
+    # FaceLandMarks.show_image(img=ans["output_img"])
+    t=AR(ans["landmarks"],ans["origin_img"],"test/masks/anti_covid.png")
+    FaceLandMarks.show_image(img=t.result)

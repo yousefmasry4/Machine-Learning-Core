@@ -1,88 +1,78 @@
-from ReadOBj import OBJ
-import cv2
 import numpy as np
+import os,csv,cv2
+class AR:
+    def __init__(self, landmarks, mainImg, img):
+        self.result = mainImg
+        self.img = img
+        self.dst_pts = np.array(
+            [
+                landmarks[1],
+                landmarks[2],
+                landmarks[3],
+                landmarks[4],
+                landmarks[5],
+                landmarks[6],
+                landmarks[7],
+                landmarks[8],
+                landmarks[9],
+                landmarks[10],
+                landmarks[11],
+                landmarks[12],
+                landmarks[13],
+                landmarks[14],
+                landmarks[15],
+                landmarks[29],
+            ],
+            dtype="float32",
+        )
+
+        # load mask annotations from csv file to source points
+        self.mask_annotation = os.path.splitext(self.img)[0]
+        print( self.mask_annotation )
+        self.mask_annotation = os.path.join(
+            self.mask_annotation + ".csv",
+        )
+
+        with open(self.mask_annotation) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=",")
+            src_pts = []
+            for i, row in enumerate(csv_reader):
+                # skip head or empty line if it's there
+                try:
+                    src_pts.append(np.array([float(row[1]), float(row[2])]))
+                except ValueError:
+                    continue
+        src_pts = np.array(src_pts, dtype="float32")
+
+        # overlay with a mask only if all landmarks have positive coordinates:
+        if (len(landmarks) > 0):
+            # load mask image
+            mask_img = cv2.imread(self.img, cv2.IMREAD_UNCHANGED)
+            mask_img = mask_img.astype(np.float32)
+            mask_img = mask_img / 255.0
+
+            # get the perspective transformation matrix
+            M, _ = cv2.findHomography(src_pts, self.dst_pts)
+
+            # transformed masked image
+            transformed_mask = cv2.warpPerspective(
+                mask_img,
+                M,
+                (self.result.shape[1], self.result.shape[0]),
+                None,
+                cv2.INTER_LINEAR,
+                cv2.BORDER_CONSTANT,
+            )
+
+            # mask overlay
+            alpha_mask = transformed_mask[:, :, 3]
+            alpha_image = 1.0 - alpha_mask
+
+            for c in range(0, 3):
+                self.result[:, :, c] = (
+                        alpha_mask * transformed_mask[:, :, c]
+                        + alpha_image * self.result[:, :, c]
+                )
+        # display the resulting frame
 
 
-def AR2D():
-
-    # Load 3D model from OBJ file
-    obj = OBJ('test/glasses/Glasses.obj', swapyz=True)
-
-    frame = render(frame, obj, projection, model, False)
-    if args.matches:
-        frame = cv2.drawMatches(model, kp_model, frame, kp_frame, matches[:10], 0, flags=2)
-    # show result
-    cv2.imshow('frame', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-    else:
-        print("Not enough matches found - %d/%d" % (len(matches), MIN_MATCHES))
-
-    cap.release()
-    cv2.destroyAllWindows()
-    return 0
-
-
-def render(img, obj, projection, model, color=False):
-    """
-    Render a loaded obj model into the current video frame
-    """
-    vertices = obj.vertices
-    scale_matrix = np.eye(3) * 3
-    h, w = model.shape
-
-    for face in obj.faces:
-        face_vertices = face[0]
-        points = np.array([vertices[vertex - 1] for vertex in face_vertices])
-        points = np.dot(points, scale_matrix)
-        # render model in the middle of the reference surface. To do so,
-        # model points must be displaced
-        points = np.array([[p[0] + w / 2, p[1] + h / 2, p[2]] for p in points])
-        dst = cv2.perspectiveTransform(points.reshape(-1, 1, 3), projection)
-        imgpts = np.int32(dst)
-        if color is False:
-            cv2.fillConvexPoly(img, imgpts, DEFAULT_COLOR)
-        else:
-            color = hex_to_rgb(face[-1])
-            color = color[::-1]  # reverse
-            cv2.fillConvexPoly(img, imgpts, color)
-
-    return img
-
-
-def projection_matrix(camera_parameters, homography):
-    """
-    From the camera calibration matrix and the estimated homography
-    compute the 3D projection matrix
-    """
-    # Compute rotation along the x and y axis as well as the translation
-    homography = homography * (-1)
-    rot_and_transl = np.dot(np.linalg.inv(camera_parameters), homography)
-    col_1 = rot_and_transl[:, 0]
-    col_2 = rot_and_transl[:, 1]
-    col_3 = rot_and_transl[:, 2]
-    # normalise vectors
-    l = math.sqrt(np.linalg.norm(col_1, 2) * np.linalg.norm(col_2, 2))
-    rot_1 = col_1 / l
-    rot_2 = col_2 / l
-    translation = col_3 / l
-    # compute the orthonormal basis
-    c = rot_1 + rot_2
-    p = np.cross(rot_1, rot_2)
-    d = np.cross(c, p)
-    rot_1 = np.dot(c / np.linalg.norm(c, 2) + d / np.linalg.norm(d, 2), 1 / math.sqrt(2))
-    rot_2 = np.dot(c / np.linalg.norm(c, 2) - d / np.linalg.norm(d, 2), 1 / math.sqrt(2))
-    rot_3 = np.cross(rot_1, rot_2)
-    # finally, compute the 3D projection matrix from the model to the current frame
-    projection = np.stack((rot_1, rot_2, rot_3, translation)).T
-    return np.dot(camera_parameters, projection)
-
-
-def hex_to_rgb(hex_color):
-    """
-    Helper function to convert hex strings to RGB
-    """
-    hex_color = hex_color.lstrip('#')
-    h_len = len(hex_color)
-    return tuple(int(hex_color[i:i + h_len // 3], 16) for i in range(0, h_len, h_len // 3))
