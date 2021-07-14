@@ -4,6 +4,7 @@ import numpy as np
 
 
 def AR2D():
+
     # Load 3D model from OBJ file
     obj = OBJ('test/glasses/Glasses.obj', swapyz=True)
 
