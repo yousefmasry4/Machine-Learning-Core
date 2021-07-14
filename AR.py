@@ -18,9 +18,9 @@ def AR2D():
     else:
         print("Not enough matches found - %d/%d" % (len(matches), MIN_MATCHES))
 
-cap.release()
-cv2.destroyAllWindows()
-return 0
+    cap.release()
+    cv2.destroyAllWindows()
+    return 0
 
 
 def render(img, obj, projection, model, color=False):
