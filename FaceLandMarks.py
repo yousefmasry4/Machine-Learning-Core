@@ -27,8 +27,8 @@ class FaceLandMarks:
     @staticmethod
     def show_image(path=None, img=None):
         image = FaceLandMarks.load_image(path) if path is not None else img
-        D_HEIGHT = 480
-        D_WIDTH = 480
+        D_HEIGHT = 1024*2
+        D_WIDTH = 1024*2
         height, width = image.shape[:2]
         if height < width:
             image = cv2.resize(image, (D_WIDTH, math.floor(height / (width / D_WIDTH))))
@@ -60,7 +60,7 @@ class FaceLandMarks:
                 "output_img": annotated_image,
 
                 "landmarks": [
-                    [data_point.z,data_point.y,data_point.z]
+                    [int(data_point.x * self.image.shape[0]), int(data_point.y * self.image.shape[1])]
                     for data_point in results.multi_face_landmarks[0].landmark
                 ]
             }
@@ -90,11 +90,43 @@ if __name__ == '__main__':
     # FaceLandMarks.show_image(img=fm.image)
     # FaceLandMarks.show_image(path="test/1.jpg")
     # ans=fm.face_points()
-    # print(ans)
     # FaceLandMarks.show_image(img=ans["output_img"])
     ans = fm.face_mesh()
 
+    print(ans["landmarks"][:25])
 
-    # FaceLandMarks.show_image(img=ans["output_img"])
-    t=AR(ans["landmarks"],ans["origin_img"],"test/masks/anti_covid.png")
-    FaceLandMarks.show_image(img=t.result)
+    image = cv2.imread(fm.img)
+
+    # Window name in which image is
+    # displayed
+    window_name = 'Image'
+
+    # Polygon corner points coordinates
+    pts = np.array(ans["landmarks"],
+                   np.int32)
+    landmarks_img = ans["origin_img"]
+    for k, landmark in enumerate(ans["landmarks"], 1):
+        print(landmark)
+        landmarks_img = cv2.circle(
+            landmarks_img,
+            center=(int(landmark[0]), int(landmark[1])),
+            radius=3,
+            color=(0, 0, 255),
+            thickness=-1,
+        )
+        # draw landmarks' labels
+        landmarks_img = cv2.putText(
+            img=landmarks_img,
+            text=str(k),
+            org=(int(landmark[0]) + 5, int(landmark[1]) + 5),
+            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+            fontScale=0.5,
+            color=(0, 0, 255),
+        )
+
+    FaceLandMarks.show_image(img=landmarks_img)
+
+    # cv2.destroyAllWindows()
+    # # FaceLandMarks.show_image(img=ans["output_img"])
+    # t = AR(ans["landmarks"], ans["origin_img"], "test/masks/anti_covid.png")
+    # FaceLandMarks.show_image(img=t.mask)

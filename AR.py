@@ -25,7 +25,7 @@ class AR:
             ],
             dtype="float32",
         )
-
+        self.mask=None
         # load mask annotations from csv file to source points
         self.mask_annotation = os.path.splitext(self.img)[0]
         print( self.mask_annotation )
@@ -67,7 +67,7 @@ class AR:
             # mask overlay
             alpha_mask = transformed_mask[:, :, 3]
             alpha_image = 1.0 - alpha_mask
-
+            self.mask=alpha_mask
             for c in range(0, 3):
                 self.result[:, :, c] = (
                         alpha_mask * transformed_mask[:, :, c]
