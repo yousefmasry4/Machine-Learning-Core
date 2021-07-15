@@ -4,27 +4,7 @@ class AR:
     def __init__(self, landmarks, mainImg, img):
         self.result = mainImg
         self.img = img
-        self.dst_pts = np.array(
-            [
-                landmarks[1],
-                landmarks[2],
-                landmarks[3],
-                landmarks[4],
-                landmarks[5],
-                landmarks[6],
-                landmarks[7],
-                landmarks[8],
-                landmarks[9],
-                landmarks[10],
-                landmarks[11],
-                landmarks[12],
-                landmarks[13],
-                landmarks[14],
-                landmarks[15],
-                landmarks[29],
-            ],
-            dtype="float32",
-        )
+        self.dst_pts = landmarks[:17]
         self.mask=None
         # load mask annotations from csv file to source points
         self.mask_annotation = os.path.splitext(self.img)[0]
@@ -67,7 +47,7 @@ class AR:
             # mask overlay
             alpha_mask = transformed_mask[:, :, 3]
             alpha_image = 1.0 - alpha_mask
-            self.mask=alpha_mask
+            self.mask=mask_img
             for c in range(0, 3):
                 self.result[:, :, c] = (
                         alpha_mask * transformed_mask[:, :, c]

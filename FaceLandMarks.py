@@ -7,6 +7,8 @@ from AR import AR
 
 class FaceLandMarks:
     def __init__(self, img=None, image=None):
+        D_HEIGHT = 1024
+        D_WIDTH = 1024
         self.img = img
         if self.img is None and image is None:
             raise Error("You should provide image")
@@ -14,7 +16,8 @@ class FaceLandMarks:
             self.image = image  # read img and save it in this var
         else:
             self.image = FaceLandMarks.load_image(self.img)
-
+        # height, width = self.image.shape[:2]
+        # self.image = cv2.resize(self.image, (D_WIDTH, math.floor(height / (width / D_WIDTH))))
         self.mp_face_mesh = mp.solutions.face_mesh
         self.mp_face_detection = mp.solutions.face_detection
         self.mp_drawing = mp.solutions.drawing_utils
@@ -60,7 +63,7 @@ class FaceLandMarks:
                 "output_img": annotated_image,
 
                 "landmarks": [
-                    [int(data_point.x * self.image.shape[0]), int(data_point.y * self.image.shape[1])]
+                    [int(data_point.x * self.image.shape[1]), int(data_point.y * self.image.shape[0])]
                     for data_point in results.multi_face_landmarks[0].landmark
                 ]
             }
@@ -86,7 +89,7 @@ class FaceLandMarks:
 
 # dev
 if __name__ == '__main__':
-    fm = FaceLandMarks(img="test/1.jpg")
+    fm = FaceLandMarks(img="test/2.jpg")
     # FaceLandMarks.show_image(img=fm.image)
     # FaceLandMarks.show_image(path="test/1.jpg")
     # ans=fm.face_points()
@@ -101,59 +104,24 @@ if __name__ == '__main__':
     # displayed
     window_name = 'Image'
 
-
     # Polygon corner points coordinates
     pts = np.array(ans["landmarks"],
                    np.int32)
-    landmarks=ans["landmarks"]
+    landmarks = ans["landmarks"]
     landmarks_img = ans["origin_img"]
 
-    '''
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
- 
-) 
- 
- 
- 
-  
-  
- 
-67  
- 
-10  
-    
-    '''
-    
     dst_pts = np.array(
         [
-            landmarks[10],
-            landmarks[338],
-            landmarks[297],
-            landmarks[332],
-            landmarks[284],
-            landmarks[251],
-            landmarks[389],
-            landmarks[356],
-            landmarks[454],
-            landmarks[323],
+            # landmarks[10],
+            # landmarks[338],
+            # landmarks[297],
+            # landmarks[332],
+            # landmarks[284],
+            # landmarks[251],
+            # landmarks[389],
+            # landmarks[356],
+            # landmarks[454],
+            # landmarks[323],
             landmarks[361],
             landmarks[288],
             landmarks[397],
@@ -171,15 +139,51 @@ if __name__ == '__main__':
             landmarks[172],
             landmarks[58],
             landmarks[132],
-            landmarks[93],
-            landmarks[234],
-            landmarks[127],
-            landmarks[162],
-            landmarks[54],
-            landmarks[103],
-            landmarks[109],
-            landmarks[10],
-            
+            # landmarks[93],
+            # landmarks[234],
+            # landmarks[127],
+            # landmarks[162],
+            # landmarks[54],
+            # landmarks[103],
+            # landmarks[109],
+            # landmarks[10],
+
+        ],
+        dtype="float32",
+    )
+    right_eye = np.array(
+        [
+            landmarks[33],
+            landmarks[7],
+            landmarks[7],
+            landmarks[163],
+            landmarks[144],
+            landmarks[144],
+            landmarks[145],
+            landmarks[153],
+            landmarks[153],
+            landmarks[154],
+            landmarks[154],
+            landmarks[155],
+            landmarks[155],
+            landmarks[133],
+            landmarks[133],
+            landmarks[246],
+            landmarks[246],
+            landmarks[161],
+            landmarks[161],
+            landmarks[160],
+            landmarks[160],
+            landmarks[159],
+            landmarks[159],
+            landmarks[158],
+            landmarks[158],
+            landmarks[157],
+            landmarks[157],
+            landmarks[173],
+            landmarks[173],
+            landmarks[133],
+
         ],
         dtype="float32",
     )
@@ -201,10 +205,119 @@ if __name__ == '__main__':
             fontScale=0.5,
             color=(0, 0, 255),
         )
-
-    FaceLandMarks.show_image(img=landmarks_img)
-
+    for k, landmark in enumerate(right_eye, 1):
+        print(landmark)
+        landmarks_img = cv2.circle(
+            landmarks_img,
+            center=(int(landmark[0]), int(landmark[1])),
+            radius=3,
+            color=(0, 255, 0),
+            thickness=-1,
+        )
+        # draw landmarks' labels
+        landmarks_img = cv2.putText(
+            img=landmarks_img,
+            text=str(k),
+            org=(int(landmark[0]) + 5, int(landmark[1]) + 5),
+            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+            fontScale=0.5,
+            color=(0, 255, 0),
+        )
+    # cv2.imshow("image with mask overlay", landmarks_img)
     # cv2.destroyAllWindows()
     # # FaceLandMarks.show_image(img=ans["output_img"])
-    # t = AR(ans["landmarks"], ans["origin_img"], "test/masks/anti_covid.png")
-    # FaceLandMarks.show_image(img=t.mask)
+    # t = AR(dst_pts[::-1], ans["origin_img"], "test/masks/anti_covid.png")
+    # cv2.imshow("image with mask overlay", t.result)
+    # # waiting for
+    # cv2.waitKey(0)
+
+
+    capture = cv2.VideoCapture(0)
+
+    frame_num = 0
+    while True:
+        # capture frame-by-frame
+        success, frame = capture.read()
+
+        # break if no frame
+        if not success:
+            break
+        fm = FaceLandMarks(image=frame)
+        ans = fm.face_mesh()
+        landmarks = ans["landmarks"]
+        dst_pts = np.array(
+            [
+                # landmarks[10],
+                # landmarks[338],
+                # landmarks[297],
+                # landmarks[332],
+                # landmarks[284],
+                # landmarks[251],
+                # landmarks[389],
+                # landmarks[356],
+                # landmarks[454],
+                # landmarks[323],
+                landmarks[361],
+                landmarks[288],
+                landmarks[397],
+                landmarks[365],
+                landmarks[379],
+                landmarks[378],
+                landmarks[400],
+                landmarks[377],
+                landmarks[152],
+                landmarks[148],
+                landmarks[176],
+                landmarks[149],
+                landmarks[150],
+                landmarks[136],
+                landmarks[172],
+                landmarks[58],
+                landmarks[132],
+                # landmarks[93],
+                # landmarks[234],
+                # landmarks[127],
+                # landmarks[162],
+                # landmarks[54],
+                # landmarks[103],
+                # landmarks[109],
+                # landmarks[10],
+
+            ],
+            dtype="float32",
+        )
+
+        frame_num += 1
+        print("frame_num: ", frame_num)
+
+        # for k, landmark in enumerate(dst_pts, 1):
+        #     print(landmark)
+        #     frame = cv2.circle(
+        #         frame,
+        #         center=(int(landmark[0]), int(landmark[1])),
+        #         radius=3,
+        #         color=(0, 0, 255),
+        #         thickness=-1,
+        #     )
+        #     # draw landmarks' labels
+        #     frame = cv2.putText(
+        #         img=frame,
+        #         text=str(k),
+        #         org=(int(landmark[0]) + 5, int(landmark[1]) + 5),
+        #         fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+        #         fontScale=0.5,
+        #         color=(0, 0, 255),
+        #     )
+        # display the resulting frame
+
+        a=AR(dst_pts, frame, "test/masks/anti_covid.png")
+
+        cv2.imshow("image with mask overlay", a.result)
+
+        # waiting for the escape button to exit
+        k = cv2.waitKey(1)
+        if k == 27:
+            break
+
+    capture.release()
+    cv2.destroyAllWindows()
