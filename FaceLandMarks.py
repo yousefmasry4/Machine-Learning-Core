@@ -101,6 +101,7 @@ if __name__ == '__main__':
     # displayed
     window_name = 'Image'
 
+
     # Polygon corner points coordinates
     pts = np.array(ans["landmarks"],
                    np.int32)
