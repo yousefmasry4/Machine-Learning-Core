@@ -27,8 +27,8 @@ class FaceLandMarks:
     @staticmethod
     def show_image(path=None, img=None):
         image = FaceLandMarks.load_image(path) if path is not None else img
-        D_HEIGHT = 1024*2
-        D_WIDTH = 1024*2
+        D_HEIGHT = 1024
+        D_WIDTH = 1024
         height, width = image.shape[:2]
         if height < width:
             image = cv2.resize(image, (D_WIDTH, math.floor(height / (width / D_WIDTH))))
@@ -104,8 +104,84 @@ if __name__ == '__main__':
     # Polygon corner points coordinates
     pts = np.array(ans["landmarks"],
                    np.int32)
+    landmarks=ans["landmarks"]
     landmarks_img = ans["origin_img"]
-    for k, landmark in enumerate(ans["landmarks"], 1):
+
+    '''
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+) 
+ 
+ 
+ 
+  
+  
+ 
+67  
+ 
+10  
+    
+    '''
+    dst_pts = np.array(
+        [
+            landmarks[10],
+            landmarks[338],
+            landmarks[297],
+            landmarks[332],
+            landmarks[284],
+            landmarks[251],
+            landmarks[389],
+            landmarks[356],
+            landmarks[454],
+            landmarks[323],
+            landmarks[361],
+            landmarks[288],
+            landmarks[397],
+            landmarks[365],
+            landmarks[379],
+            landmarks[378],
+            landmarks[400],
+            landmarks[377],
+            landmarks[152],
+            landmarks[148],
+            landmarks[176],
+            landmarks[149],
+            landmarks[150],
+            landmarks[136],
+            landmarks[172],
+            landmarks[58],
+            landmarks[132],
+            landmarks[93],
+            landmarks[234],
+            landmarks[127],
+            landmarks[162],
+            landmarks[54],
+            landmarks[103],
+            landmarks[109],
+            landmarks[10],
+            
+        ],
+        dtype="float32",
+    )
+    for k, landmark in enumerate(dst_pts, 1):
         print(landmark)
         landmarks_img = cv2.circle(
             landmarks_img,
