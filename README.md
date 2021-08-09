@@ -9,7 +9,7 @@ Inside the root project you can run
 sudo docker-compose build
 ```
 
-and then run the folowing to start the container and expose the API:
+and then run the following to start the container and expose the API:
 
 ```shell
 sudo docker-compose up
@@ -90,4 +90,5 @@ _Note that i removed part of this response detected in pointed part_
     }
 }
 ```
+- each array element contain x,y pixel position
 _Note that we send image in Base64_
