@@ -95,5 +95,5 @@ _Note that we send image in Base64_
 
 ## Points(left_eye) example on image:
 
-![](/home/yousseff/Desktop/Augm/FaceServer/test/Screenshot from 2021-08-09 18-53-58.png)
+![](test/Screenshot from 2021-08-09 18-53-58.png)
 
