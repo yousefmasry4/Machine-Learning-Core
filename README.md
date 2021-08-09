@@ -95,5 +95,6 @@ _Note that we send image in Base64_
 
 ## Points(left_eye) example on image:
 
-![](test/Screenshot from 2021-08-09 18-53-58.png)
+![](https://github.com/yousefmasry4/Machine-Learning-Core/blob/API/test/Screenshot%20from%202021-08-09%2018-53-58.png)
+
 
