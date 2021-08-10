@@ -15,6 +15,8 @@ and then run the following to start the container and expose the API:
 sudo docker-compose up
 ```
 
+[![Run in Postman](https://s3.amazonaws.com/postman-static/run-button.png)](https://documenter.getpostman.com/view/8476530/Tzz4RzBS)
+
 ## Api route
 
 **http://0.0.0.0:5000/maskImage** _[Post]_
