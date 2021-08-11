@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Screenshot from 2021-08-09 18-53-58.png" />
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.web: Compose Deployment">
+  <component name="RunManager" selected="Python.main">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FaceServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,10 +125,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.web: Compose Deployment" />
         <item itemvalue="Python.app" />
-        <item itemvalue="Docker.lib/Dockerfile" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Python.face" />
       </list>
     </recent_temporary>
