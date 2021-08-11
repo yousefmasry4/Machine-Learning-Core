@@ -3,7 +3,7 @@ import numpy as np
 import math
 import mediapipe as mp
 
-from .facePoints import facePoints
+from facePoints import facePoints
 # hi nour omran
 
 ai = mp.solutions.face_mesh
