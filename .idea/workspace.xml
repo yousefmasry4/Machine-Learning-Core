@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="hi nour omran">
-      <change afterPath="$PROJECT_DIR$/lib/AI/wrist/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" afterDir="false" />
+    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wrist pack &#10;__init__.py &#10;wrist.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +32,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Screenshot from 2021-08-09 18-53-58.png" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.face">
+  <component name="RunManager" selected="Python.wrist">
     <configuration name="AI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,22 +75,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="wrist" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/Downloads/Machine-Learning-Core-API/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI/wrist" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/AI/wrist/wrist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.web: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="web" />
-            </list>
-          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -109,9 +115,11 @@
     <list>
       <item itemvalue="Python.AI" />
       <item itemvalue="Python.face" />
+      <item itemvalue="Python.wrist" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.wrist" />
         <item itemvalue="Python.face" />
         <item itemvalue="Python.AI" />
       </list>
@@ -154,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628701818831</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="wrist pack &#10;__init__.py &#10;wrist.py">
+      <created>1628704974945</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628704974945</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +188,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="hi nour" />
     <MESSAGE value="hi nour omran" />
-    <option name="LAST_COMMIT_MESSAGE" value="hi nour omran" />
+    <MESSAGE value="wrist pack &#10;__init__.py &#10;wrist.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrist pack &#10;__init__.py &#10;wrist.py" />
   </component>
 </project>
