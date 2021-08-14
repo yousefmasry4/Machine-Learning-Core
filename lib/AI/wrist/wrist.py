@@ -48,15 +48,13 @@ class HolisticLandMarks:
                 # Print nose coordinates.
                 image_hight, image_width, _ = self.image.shape
                 if results.pose_landmarks:
-                    print(
+                    return(
                         f'Nose coordinates: ('
                         f'{results.pose_landmarks.landmark[mp_holistic.PoseLandmark.NOSE].x * image_width}, '
                         f'{results.pose_landmarks.landmark[mp_holistic.PoseLandmark.NOSE].y * image_hight})'
                     )
 
                 # Draw pose landmarks.
-                name='Nose'
-                print(f'Pose landmarks of {name}:')
                 annotated_image = self.image.copy()
                 self.mp_drawing.draw_landmarks(annotated_image, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
                 self.mp_drawing.draw_landmarks(annotated_image, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
@@ -79,4 +77,4 @@ if __name__ == '__main__':
     fm = HolisticLandMarks(img="model1.png")
 
     #fm.show_image("model1.png")
-    fm.holistic_landmarks()
+    print(fm.holistic_landmarks())

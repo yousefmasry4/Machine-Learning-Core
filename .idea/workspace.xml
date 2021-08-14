@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wrist pack &#10;__init__.py &#10;wrist.py">
+    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wirst.py v1 test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" afterDir="false" />
     </list>
@@ -169,7 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1628704974945</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="wirst.py v1 test">
+      <created>1628786102910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628786102910</updated>
+    </task>
+    <task id="LOCAL-00007" summary="wirst.py v1 test">
+      <created>1628786206314</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1628786206314</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +203,7 @@
     <MESSAGE value="hi nour" />
     <MESSAGE value="hi nour omran" />
     <MESSAGE value="wrist pack &#10;__init__.py &#10;wrist.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrist pack &#10;__init__.py &#10;wrist.py" />
+    <MESSAGE value="wirst.py v1 test" />
+    <option name="LAST_COMMIT_MESSAGE" value="wirst.py v1 test" />
   </component>
 </project>
