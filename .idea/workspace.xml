@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wrist photos">
-      <change afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/AI/Hand/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/236261405_569813930722050_2309333142389947229_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/236581335_4599727816746406_4505042074098827672_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/swollen-and-puffy-hand.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/IMG_7078.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/IMG_7079.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/IMG_7081.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/IMG_7082.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/IMG_7084.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/IMG_7085.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Screenshot from 2021-08-09 18-53-58.png" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.Hand">
@@ -64,7 +76,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Downloads/Machine-Learning-Core-API/venv/bin/python" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI/Hand" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -85,7 +97,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Downloads/Machine-Learning-Core-API/venv/bin/python" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
@@ -130,6 +142,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.lib/Dockerfile" />
       <item itemvalue="Python.AI" />
       <item itemvalue="Python.face" />
       <item itemvalue="Python.wrist" />
@@ -138,8 +151,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Hand" />
-        <item itemvalue="Python.wrist" />
         <item itemvalue="Python.face" />
+        <item itemvalue="Python.wrist" />
         <item itemvalue="Python.AI" />
       </list>
     </recent_temporary>
@@ -223,28 +236,7 @@
       <option name="project" value="LOCAL" />
       <updated>1628953734096</updated>
     </task>
-    <task id="LOCAL-00011" summary="wrist photos">
-      <created>1628954482516</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1628954482516</updated>
-    </task>
-    <task id="LOCAL-00012" summary="wrist photos">
-      <created>1628954505958</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1628954505958</updated>
-    </task>
-    <task id="LOCAL-00013" summary="wrist photos">
-      <created>1628954538404</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1628954538404</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
