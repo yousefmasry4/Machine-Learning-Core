@@ -53,7 +53,6 @@ class HolisticLandMarks:
                         f'{results.pose_landmarks.landmark[mp_holistic.PoseLandmark.NOSE].x * image_width}, '
                         f'{results.pose_landmarks.landmark[mp_holistic.PoseLandmark.NOSE].y * image_hight})'
                     )
-
                 # Draw pose landmarks.
                 annotated_image = self.image.copy()
                 self.mp_drawing.draw_landmarks(annotated_image, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
