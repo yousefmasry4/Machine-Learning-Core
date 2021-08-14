@@ -71,8 +71,8 @@ with mp_hands.Hands(
     m1=results.multi_hand_landmarks[0].landmark[5]
     m2=results.multi_hand_landmarks[0].landmark[17]
     mid=midpoint(m1,m2)
-    # @todo new point & Line
-    # @body use mid and wrist to get new point
+    # @todo  new point & Line
+    # @body  use mid and wrist to get new point
     image = cv2.circle(
         image,
         center=(int(mid[0]*image.shape[1]), int(mid[1]*image.shape[0])),
