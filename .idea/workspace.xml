@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wrist photos">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/236261405_569813930722050_2309333142389947229_n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/236581335_4599727816746406_4505042074098827672_n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/swollen-and-puffy-hand.jpg" afterDir="false" />
+    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="line eq">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/face.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IMG_7078.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IMG_7079.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IMG_7081.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IMG_7082.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IMG_7084.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/IMG_7085.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +20,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="API" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1wUPz3tqEgPnorwhkLNWbxPCTYu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -44,6 +39,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Screenshot from 2021-08-09 18-53-58.png" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -236,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628953734096</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="line eq">
+      <created>1629042674314</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629042674315</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,6 +262,7 @@
     <MESSAGE value="wrist pack &#10;__init__.py &#10;wrist.py" />
     <MESSAGE value="wirst.py v1 test" />
     <MESSAGE value="wrist photos" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrist photos" />
+    <MESSAGE value="line eq" />
+    <option name="LAST_COMMIT_MESSAGE" value="line eq" />
   </component>
 </project>
