@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="line eq">
+    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wrist photos">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
     </list>
@@ -20,13 +21,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="API" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectId" id="1wUPz3tqEgPnorwhkLNWbxPCTYu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -39,7 +33,6 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Screenshot from 2021-08-09 18-53-58.png" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -72,7 +65,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_HOME" value="$USER_HOME$/Downloads/Machine-Learning-Core-API/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI/Hand" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -138,7 +131,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.lib/Dockerfile" />
       <item itemvalue="Python.AI" />
       <item itemvalue="Python.face" />
       <item itemvalue="Python.wrist" />
@@ -232,14 +224,7 @@
       <option name="project" value="LOCAL" />
       <updated>1628953734096</updated>
     </task>
-    <task id="LOCAL-00011" summary="line eq">
-      <created>1629042674314</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1629042674315</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,7 +247,6 @@
     <MESSAGE value="wrist pack &#10;__init__.py &#10;wrist.py" />
     <MESSAGE value="wirst.py v1 test" />
     <MESSAGE value="wrist photos" />
-    <MESSAGE value="line eq" />
-    <option name="LAST_COMMIT_MESSAGE" value="line eq" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrist photos" />
   </component>
 </project>
