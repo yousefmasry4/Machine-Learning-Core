@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="wrist photos">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="photo cap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
     </list>
@@ -224,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628953734096</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="photo cap">
+      <created>1629051156611</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629051156611</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,6 +253,7 @@
     <MESSAGE value="wrist pack &#10;__init__.py &#10;wrist.py" />
     <MESSAGE value="wirst.py v1 test" />
     <MESSAGE value="wrist photos" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrist photos" />
+    <MESSAGE value="photo cap" />
+    <option name="LAST_COMMIT_MESSAGE" value="photo cap" />
   </component>
 </project>
