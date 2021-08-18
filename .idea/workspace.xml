@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="photo cap">
-      <change afterPath="$PROJECT_DIR$/lib/AI/Face/face.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/AI/Face/facePoints.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/face.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/wrist.png" afterDir="false" />
+    <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="API IMAGE BASE64, new: Wrist api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/face.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/facePoints.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Face/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/model1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629051156611</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="API IMAGE BASE64, new: Wrist api">
+      <created>1629282338843</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1629282338844</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,6 +281,7 @@
     <MESSAGE value="wirst.py v1 test" />
     <MESSAGE value="wrist photos" />
     <MESSAGE value="photo cap" />
-    <option name="LAST_COMMIT_MESSAGE" value="photo cap" />
+    <MESSAGE value="API IMAGE BASE64, new: Wrist api" />
+    <option name="LAST_COMMIT_MESSAGE" value="API IMAGE BASE64, new: Wrist api" />
   </component>
 </project>
