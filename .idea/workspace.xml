@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dd18cb-8fd4-42be-a8bd-a1b749d85fcc" name="Changes" comment="photo cap">
+      <change afterPath="$PROJECT_DIR$/lib/AI/Face/face.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/AI/Face/facePoints.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/face.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/wrist.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Hand/Hand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/face.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/facePoints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/AI/Face/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/model1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/AI/wrist/wrist.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,24 +42,29 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Screenshot from 2021-08-09 18-53-58.png" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/AI" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Hand">
-    <configuration name="AI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/AI" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.face (1)">
+    <configuration name="Hand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Downloads/Machine-Learning-Core-API/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI/Hand" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/AI" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/AI/Hand/Hand.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -58,19 +73,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Hand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Downloads/Machine-Learning-Core-API/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI/Hand" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/AI/Hand/Hand.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="face (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/AI/Face" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/AI/Face/face.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,26 +157,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lib/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="lib/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.AI" />
+      <item itemvalue="Python.Hand" />
       <item itemvalue="Python.face" />
       <item itemvalue="Python.wrist" />
-      <item itemvalue="Python.Hand" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.face (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.face (1)" />
         <item itemvalue="Python.Hand" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.face" />
         <item itemvalue="Python.wrist" />
-        <item itemvalue="Python.AI" />
       </list>
     </recent_temporary>
   </component>

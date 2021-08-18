@@ -3,7 +3,7 @@ import numpy as np
 import math
 import mediapipe as mp
 
-from facePoints import facePoints
+from .facePoints import facePoints
 # hi nour omran
 
 ai = mp.solutions.face_mesh
@@ -58,33 +58,20 @@ class FaceLandMarks:
                 landmark_drawing_spec=self.drawing_spec,
                 connection_drawing_spec=self.drawing_spec)
             return [
-                    [int(data_point.x * self.image.shape[0]), int(data_point.y * self.image.shape[1])]
-                    for data_point in results.multi_face_landmarks[0].landmark
-                ]
-    def hand_landmarks(self, static_image_mode=True, min_detection_confidence=0.7) -> []:
-
-        # Run MediaPipe Hands.
-        with mp_hands.Hands(
-                static_image_mode=static_image_mode,
-                max_num_hands=1,
-                min_detection_confidence=min_detection_confidence) as hands:
-
-                results = hands.process(cv2.flip(cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB), 1))
-
-                return [
                     [int(data_point.x * self.image.shape[1]), int(data_point.y * self.image.shape[0])]
-                    for data_point in results.multi_hand_landmarks[0].landmark
+                    for data_point in results.multi_face_landmarks[0].landmark
                 ]
 
 # dev
 if __name__ == '__main__':
-    fm = FaceLandMarks(img="../../test/236581335_4599727816746406_4505042074098827672_n.jpg")
+    fm = FaceLandMarks(img="../../../test/159fd33380ec213fc514be7ad7af555d.jpg")
     # FaceLandMarks.show_image(img=fm.image)
     # FaceLandMarks.show_image(path="test/1.jpg")
     # ans=fm.face_points()
     # FaceLandMarks.show_image(img=ans["output_img"])
     landmarks_img =fm.image
-    points= fm.hand_landmarks()
+    ans = facePoints(fm.face_mesh())
+    points= ans.face_oval()
     for k, landmark in enumerate(points, 1):
         print(landmark)
         landmarks_img = cv2.circle(
