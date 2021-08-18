@@ -102,14 +102,14 @@ _Note that we send image in Base64_
 
 ## wrist (V0):
     In this version you should provide image like next image in hand position
-----
-###wrist phases:
+
+### wrist phases:
 - [x] Provide normal wrist image (range .5~1m) like next image  
 - [ ] Wrist in any range from camera  
 - [ ] Remove fake hand palm point
 - [ ] Left or right
 - [ ] any rotation angle
-----
+
 ### Parameters:
 
 -image
