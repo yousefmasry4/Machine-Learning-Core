@@ -100,7 +100,7 @@ _Note that we send image in Base64_
 
 ---
 
-##wrist (V0):
+## wrist (V0):
     In this version you should provide image like next image in hand position
 ----
 ###wrist phases:
