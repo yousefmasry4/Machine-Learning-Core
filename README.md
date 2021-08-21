@@ -26,7 +26,7 @@ sudo docker-compose up
 ## Api route:
 
 - **http://0.0.0.0:5000/maskImage** _[Post]_
-- **http://0.0.0.0:5000/maskImage** _[Post]_
+- **http://0.0.0.0:5000/wrist** _[Post]_
 
 
     Note that you should send image as base64 string
