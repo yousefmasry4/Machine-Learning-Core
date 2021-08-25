@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 from numpy import ones, vstack
 from numpy.linalg import lstsq
+import math
 
 aiHand = mp.solutions.hands
 
@@ -28,8 +29,8 @@ class HandLandMarks:
     def hand_landmarks(self) -> []:
 
         with self.mp_hands.Hands(
-                min_detection_confidence=0.7,
-                min_tracking_confidence=0.7,
+                min_detection_confidence=0.5,
+                min_tracking_confidence=0.5,
                 max_num_hands=1
         ) as hands:
 
@@ -58,25 +59,33 @@ class HandLandMarks:
             m, c = lstsq(A, y_coords)[0]
             print("Line Solution is y = {m}x + {c}".format(m=m, c=c))
             newX = 0
+
+            def getLen():
+                return (math.dist([wrist.x, wrist.y], [mid[0], mid[1]]) * image.shape[1]) / 2
+
             if wrist.x > mid[0]:
-                newX = wrist.x + (70 / image.shape[1])
+                newX = wrist.x + (getLen() / image.shape[1])
             else:
-                newX = wrist.x - (70 / image.shape[1])
+                newX = wrist.x - (getLen() / image.shape[1])
             newY = m * newX + c
-            # image = cv2.circle(
-            #     image,
-            #     center=(int(newX * image.shape[1]), int(newY * image.shape[0])),
-            #     radius=7,
-            #     color=(0, 255, 0),
-            #     thickness=-1,
-            # )
-            # cv2.imshow('MediaPipe Hands', image)
-            #
-            # cv2.waitKey(0)
+            print(getLen())
+
+            image = cv2.circle(
+                image,
+                center=(int(newX * image.shape[1]), int(newY * image.shape[0])),
+                radius=7,
+                color=(0, 255, 0),
+                thickness=-1,
+            )
+            cv2.imshow('MediaPipe Hands', image)
+
+            cv2.waitKey(0)
+
+
             return int(newX * image.shape[1]), int(newY * image.shape[0])
 
 
 if __name__ == '__main__':
     hm = HandLandMarks(
-        '/home/yousseff/Desktop/Augm/FaceServer/test/236581335_4599727816746406_4505042074098827672_n.jpg')
+         '/home/yousseff/Downloads/239799330_1021556138386531_8280956637814266616_n.jpg')
     print(hm.hand_landmarks())
