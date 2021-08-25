@@ -26,7 +26,7 @@ sudo docker-compose up
 ## Api route:
 
 - **http://0.0.0.0:5000/maskImage** _[Post]_
-- **http://0.0.0.0:5000/maskImage** _[Post]_
+- **http://0.0.0.0:5000/wrist** _[Post]_
 
 
     Note that you should send image as base64 string
@@ -105,7 +105,7 @@ _Note that we send image in Base64_
 ----
 ###wrist phases:
 - [x] Provide normal wrist image (range .5~1m) like next image  
-- [ ] Wrist in any range from camera  
+- [x] Wrist in any range from camera  
 - [ ] Remove fake hand palm point
 - [ ] Left or right
 - [ ] any rotation angle
