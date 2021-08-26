@@ -3,7 +3,8 @@ import mediapipe as mp
 from numpy import ones, vstack
 from numpy.linalg import lstsq
 import math
-
+import numpy as np
+from numpy.linalg import norm
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
@@ -38,8 +39,36 @@ with mp_hands.Hands(
 
 def midpoint(p1, p2):
     return (p1.x + p2.x) / 2, (p1.y + p2.y) / 2
+def limitt(n):
+    if n[0]<=1 and n[0]>=0:
+        return n[0]
 
-
+def Dpoint(c,a,b,r):
+    pi=3.1415926535897932384626433832795
+    degree = 2 * pi / 360
+    radian = 1 / degree
+    radius=  r
+    a0=np.multiply(a,degree)
+    b0=np.multiply(b,degree)
+    c0=np.multiply(c,degree)
+    aa=[1.0,math.cos(c0[0])]
+    ba=[1.0,math.cos(c0[0])]
+    ca= [1.0,math.cos(c0[0])]
+    A=np.multiply(np.multiply(a0,aa),radius)
+    B=np.multiply(np.multiply(b0,ba),radius)
+    C=np.multiply(np.multiply(c0,ca),radius)
+    V=A-C
+    U=B-A
+    e = (B - A).transpose()
+    g = A - C
+    rsquare=norm(e + g) ** 2
+    alpha = np.sum((np.multiply(U,U)))
+    beta  =np.sum((np.multiply(U,V)))
+    gamma = np.sum((np.multiply(V,V))) - rsquare
+    t=[]
+    t.append((-beta)+math.sqrt(np.multiply(beta,beta)-np.multiply(alpha,gamma)))
+    t.append((-beta)-math.sqrt(np.multiply(beta,beta)-np.multiply(alpha,gamma)))
+    return np.multiply(np.outer(a0 + (b0-a0),limitt(t)),radian)
 # For webcam input:
 cap = cv2.VideoCapture(0)
 with mp_hands.Hands(
@@ -91,11 +120,18 @@ with mp_hands.Hands(
                 else:
                     newX = wrist.x - (getLen() / image.shape[1])
                 newY = m * newX + c
+
                 c, a, b = (wrist.x, wrist.y), (wrist.x, wrist.y), (int(newX), int(newY))
                 r = getLen()
-                # TODO Get intersection
 
-                print(getLen())
+                #print(c,a,b,r)
+
+
+                # TODO Get intersection
+                #Dpoint(c,a,b,r)
+                print(Dpoint((48.137024, 11.575249), (48.139115, 11.578081), (48.146303, 11.593102), 1000.0))
+
+
 
                 image = cv2.circle(
                     image,
