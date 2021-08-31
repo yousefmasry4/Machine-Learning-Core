@@ -5,7 +5,7 @@ from numpy.linalg import lstsq
 import math
 import numpy as np
 from numpy.linalg import norm
-from sympy import symbols, Eq, solve
+#from sympy import symbols, Eq, solve
 
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
@@ -113,9 +113,17 @@ with mp_hands.Hands(
 
                 points = [(mid[0] * image.shape[1], mid[1] * image.shape[0]),
                           (wrist.x * image.shape[1], wrist.y * image.shape[0])]
+
                 x_coords, y_coords = zip(*points)
+                print((y_coords[0]-y_coords[1])/(x_coords[0]-x_coords[1]))
+                print((x_coords[0],y_coords[0]))
+                print((x_coords[1], y_coords[1]))
                 A = vstack([x_coords, ones(len(x_coords))]).T
+                #print(A)
                 m, c = lstsq(A, y_coords)[0]
+                #print( (A, y_coords))
+                print(m)
+                print(c)
                 newX = 0
 
 
