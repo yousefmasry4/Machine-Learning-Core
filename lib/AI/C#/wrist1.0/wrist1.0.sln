@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrist1.0", "wrist1.0\wrist1.0.csproj", "{CC027A56-6BF1-4292-ADE0-A07D02B4E665}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC027A56-6BF1-4292-ADE0-A07D02B4E665}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{CC027A56-6BF1-4292-ADE0-A07D02B4E665}.Debug|anycpu.Build.0 = Debug|anycpu
+		{CC027A56-6BF1-4292-ADE0-A07D02B4E665}.Release|anycpu.ActiveCfg = Release|anycpu
+		{CC027A56-6BF1-4292-ADE0-A07D02B4E665}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85B69EA8-F6F8-4A26-8560-E6D7B3AEB080}
+	EndGlobalSection
+EndGlobal

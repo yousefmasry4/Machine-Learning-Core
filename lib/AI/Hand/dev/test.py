@@ -107,36 +107,24 @@ with mp_hands.Hands(
                 #     hand_landmarks,
                 #     mp_hands.HAND_CONNECTIONS, )
                 wrist = results.multi_hand_landmarks[0].landmark[0]
-
-
-                p1 = results.multi_hand_landmarks[0].landmark[4]
-                p2 = results.multi_hand_landmarks[0].landmark[20]
-
                 m1 = results.multi_hand_landmarks[0].landmark[5]
                 m2 = results.multi_hand_landmarks[0].landmark[17]
                 mid = midpoint(m1, m2)
-                print("m1 :", m1)
-                print("m2 :", m2)
-                print("mid :", mid)
-                print("wrist :", wrist)
-                print("shapeY :", image.shape[1])
-                print("shapeX :", image.shape[0])
 
                 points = [(mid[0] * image.shape[1], mid[1] * image.shape[0]),
                           (wrist.x * image.shape[1], wrist.y * image.shape[0])]
                 x_coords, y_coords = zip(*points)
                 A = vstack([x_coords, ones(len(x_coords))]).T
                 m, c = lstsq(A, y_coords)[0]
-                print("m , c = ", m, c)
                 newX = 0
 
 
                 def getLen():
-                    xx = (math.dist([wrist.x, wrist.y], [mid[0], mid[1]]) * image.shape[1]) / 2
-                    xx = 70 if xx > 70 else xx
+                    xx=(math.dist([wrist.x, wrist.y], [mid[0], mid[1]]) * image.shape[1]) / 2
+                    xx=70 if xx >70 else xx
                     return xx
 
-                print("getLen :", getLen())
+
                 if wrist.x < mid[0]:
                     newX = wrist.x + (getLen() / image.shape[1])
                 else:
@@ -148,7 +136,7 @@ with mp_hands.Hands(
                 eq1 = Eq(x * m - y, -1 * c)
                 eq2 = Eq((x - (wrist.x * image.shape[1])) ** 2 + (y - (wrist.y * image.shape[0])) ** 2, getLen() ** 2)
                 ans = solve((eq1, eq2), (x, y))
-                print(ans)
+
                 # c, a, b = (wrist.x, wrist.y), (wrist.x, wrist.y), (newX, newY)
                 # r = getLen()
                 #
@@ -158,24 +146,20 @@ with mp_hands.Hands(
                 # newX = temp[0][0]
                 # newY = temp[1][0]
                 # print(Dpoint((48.137024, 11.575249), (48.139115, 11.578081), (48.146303, 11.593102), 1000.0))
-                print((int(ans[0][0]), int(ans[0][1])))
                 try:
                     image = cv2.circle(
                         image,
                         center=(int(ans[0][0]), int(ans[0][1])),
-                        radius=10,
-                        color=
-                        (0, 255, 0) if math.dist([0,0],[p1.x,p1.y]) < math.dist([0,0],[p2.x,p2.y]) else (1000, 55, 200),
+                        radius=7,
+                        color=(0, 255, 0),
                         thickness=-1,
                     )
                 except:
                     print("i")
-
                 # cv2.line(image,(int(mid[0] * image.shape[1]), int(mid[1] * image.shape[0])) , (int(newX),int(newY)),
                 #
                 #           (0, 255, 0), thickness=2)
                 # cv2.circle(image,(int(wrist.x* image.shape[1]),int(wrist.y* image.shape[0])), int(getLen()), (0,0,255), 0)
-                print("---------------------------")
         cv2.imshow('MediaPipe Hands', image)
 
         if cv2.waitKey(5) & 0xFF == 27:
