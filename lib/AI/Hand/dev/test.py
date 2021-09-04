@@ -109,6 +109,7 @@ with mp_hands.Hands(
                 wrist = results.multi_hand_landmarks[0].landmark[0]
                 m1 = results.multi_hand_landmarks[0].landmark[5]
                 m2 = results.multi_hand_landmarks[0].landmark[17]
+                p1,p2=results.multi_hand_landmarks[0].landmark[4],results.multi_hand_landmarks[0].landmark[20]
                 mid = midpoint(m1, m2)
 
                 points = [(mid[0] * image.shape[1], mid[1] * image.shape[0]),
@@ -151,7 +152,7 @@ with mp_hands.Hands(
                         image,
                         center=(int(ans[0][0]), int(ans[0][1])),
                         radius=7,
-                        color=(0, 255, 0),
+                        color=(0, 255, 0) if math.dist([0,0],[p1.x,p1.y]) < math.dist([0,0],[p2.x,p2.y]) else (1000, 55, 200),
                         thickness=-1,
                     )
                 except:
