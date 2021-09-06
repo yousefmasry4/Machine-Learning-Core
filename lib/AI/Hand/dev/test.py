@@ -117,6 +117,15 @@ with mp_hands.Hands(
                 x_coords, y_coords = zip(*points)
                 A = vstack([x_coords, ones(len(x_coords))]).T
                 m, c = lstsq(A, y_coords)[0]
+
+
+                angle_in_radians = math.atan(m)
+                angle_in_degrees = math.degrees(angle_in_radians)
+
+
+
+
+
                 newX = 0
 
 
@@ -155,12 +164,31 @@ with mp_hands.Hands(
                         color=(0, 255, 0) if math.dist([0,0],[p1.x,p1.y]) < math.dist([0,0],[p2.x,p2.y]) else (1000, 55, 200),
                         thickness=-1,
                     )
+                    # font
+                    font = cv2.FONT_HERSHEY_SIMPLEX
+
+                    # org
+                    org = (50, 50)
+
+                    # fontScale
+                    fontScale = 1
+
+                    # Blue color in BGR
+                    color = (255, 0, 0)
+
+                    # Line thickness of 2 px
+                    thickness = 2
+
+                    # Using cv2.putText() method
+                    print(angle_in_degrees)
+                    image = cv2.putText(image, str(angle_in_degrees), org, font,
+                                        fontScale, color, thickness, cv2.LINE_AA)
                 except:
                     print("i")
-                # cv2.line(image,(int(mid[0] * image.shape[1]), int(mid[1] * image.shape[0])) , (int(newX),int(newY)),
-                #
-                #           (0, 255, 0), thickness=2)
-                # cv2.circle(image,(int(wrist.x* image.shape[1]),int(wrist.y* image.shape[0])), int(getLen()), (0,0,255), 0)
+                cv2.line(image,(int(mid[0] * image.shape[1]), int(mid[1] * image.shape[0])) , (int(newX),int(newY)),
+
+                          (0, 255, 0), thickness=2)
+                cv2.circle(image,(int(wrist.x* image.shape[1]),int(wrist.y* image.shape[0])), int(getLen()), (0,0,255), 0)
         cv2.imshow('MediaPipe Hands', image)
 
         if cv2.waitKey(5) & 0xFF == 27:
