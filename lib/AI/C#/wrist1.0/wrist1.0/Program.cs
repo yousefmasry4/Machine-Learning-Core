@@ -4,19 +4,38 @@ public class Wrist
 {
     public double[] m1 = new double[2];
     public double[] m2 = new double[2];
+    public double[] p1 = new double[2];
+    public double[] p2 = new double[2];
     public double WristY;
     public double WristX;
+    public double WristZ; 
     public double shapeY;
     public double shapeX;
 
-    public Wrist(double[] m1, double[] m2, double WristY, double WristX, double shapeY, double shapeX)
+    public Wrist(double[] m1, double[] m2, double WristY, double WristX,double WristZ, double shapeY, double shapeX, double[] p1, double[] p2)
     {
         this.m1 = m1;
         this.m2 = m2;
         this.WristY = WristY;
         this.WristX = WristX;
+        this.WristZ = WristZ;
         this.shapeY = shapeY;
         this.shapeX = shapeX;
+        this.p1 = p1;
+        this.p2 = p2;
+        
+    }
+    public bool CheckPalmorBack(double[] p1, double[] p2)
+    {
+        double d = Math.Pow(0 - 0, 2) + Math.Pow(p1[0] - p1[1], 2);
+        double dis = Math.Sqrt(d);
+        double d1 = Math.Pow(0 - 0, 2) + Math.Pow(p2[0] - p2[1], 2);
+        double dis1 = Math.Sqrt(d);
+        if (dis < dis1)
+        {
+            return true; 
+        }
+        return false; 
     }
     public double getlen(double[] x, double[] y)
     {
@@ -82,7 +101,7 @@ public class Wrist
         //Console.WriteLine((1 + (m * m)));
         double x = (-1 * beq - Math.Sqrt((beq * beq) - ceq)) / (2 * (1 + (m * m)));
         double y = (x * m) + c;
-        double[] wristpoints = new double[2] { x, y };
+        double[] wristpoints = new double[3] { x, y,WristZ*shapeX };
         //double ans = Math.Pow(r, 2) - Math.Pow(a, 2) - Math.Pow(c, 2) - Math.Pow(b, 2) + 2 * b * c;
         return wristpoints;
     }

@@ -1,0 +1,2 @@
+/Users/nouromran/Documents/Augmania/Machine-Learning-Core/lib/AI/C#/wrist1.0/wrist1.0/obj/Debug/wrist1.0.csproj.AssemblyReference.cache
+/Users/nouromran/Documents/Augmania/Machine-Learning-Core/lib/AI/C#/wrist1.0/wrist1.0/obj/Debug/wrist1.0.csproj.CoreCompileInputs.cache
