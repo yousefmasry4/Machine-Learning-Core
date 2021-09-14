@@ -125,7 +125,6 @@ with mp_hands.Hands(
 
 
 
-
                 newX = 0
 
 
