@@ -105,4 +105,12 @@ public class Wrist
         //double ans = Math.Pow(r, 2) - Math.Pow(a, 2) - Math.Pow(c, 2) - Math.Pow(b, 2) + 2 * b * c;
         return wristpoints;
     }
+    public double [] AngleOfRotation (double[] newCoordinates, double[] oldCoordinates))
+        {
+            double[] Angles = new double[3];
+            Angle[0]=((newCoordinates[1]/oldCoordinates[2])+(newCoordinates[2]/oldCoordinates[1]))/((oldCoordinates[1]/oldCoordinates[2])+(oldCoordinates[1]/oldCoordinates[2]));
+            Angle[1]=((newCoordinates[0]/oldCoordinates[2])+(newCoordinates[2]/oldCoordinates[0]))/((oldCoordinates[0]/oldCoordinates[2])+(oldCoordinates[1]/oldCoordinates[0]));
+            Angle[2]=((newCoordinates[0]/oldCoordinates[1])+(newCoordinates[1]/oldCoordinates[0]))/((oldCoordinates[0]/oldCoordinates[1])+(oldCoordinates[1]/oldCoordinates[0]));
+            return Angles; 
+        } 
 }
