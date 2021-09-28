@@ -3,7 +3,7 @@ FROM python:3
 # Create a work dir
 WORKDIR /usr/src/app
 # copy requirements.txt into workdir created above
-COPY requirements.txt ./
+COPY ../requirements.txt ./
 RUN apt-get update ##[edited]
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 # Install all requirements
